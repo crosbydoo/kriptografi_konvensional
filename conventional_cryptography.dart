@@ -189,9 +189,11 @@ void vignere() {
 
 String vencrypt(String plaintext, String key) {
   String ciphertext = '';
+  //perulangan untuk menyesuaikan plaintext
   for (int i = 0; i < plaintext.length; i++) {
-    int plainChar = plaintext.codeUnitAt(i) - 65;
-    int keyChar = key.codeUnitAt(i % key.length) - 65;
+    int plainChar =
+        plaintext.codeUnitAt(i) - 65; // mendapatkan index dari ASCII
+    int keyChar = key.codeUnitAt(i % key.length) - 65; // index dari huruf kunci
     int cipherChar = (plainChar + keyChar) % 26 + 65;
     ciphertext += String.fromCharCode(cipherChar);
   }
